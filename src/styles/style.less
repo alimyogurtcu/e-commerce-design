@@ -1,0 +1,448 @@
+@background-color : #FFFFFF;
+@primary-color : #264653;
+@secondary-color : #f4a261;
+@a-tag-color : #212529;
+
+// Col - Cards - Logo - 
+@media only screen and (max-width: 992px) {
+    [class*="col"] {
+        width: 100%;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .cards {
+        justify-content: center;
+
+        .card {
+            width: 16rem;
+
+            .discount-price {
+                position: absolute;
+                left: 1rem;
+                bottom: .5rem;
+
+            }
+        }
+    }
+
+    .logo {
+        position: relative;
+        display: inline-block;
+        height: 100px;
+
+        img {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+}
+
+// Navbar Horizontal Line (<hr>)
+@media only screen and (min-width: 992px) {
+    .nav-h-line {
+        display: none;
+    }
+}
+
+// Col Center - Navbar Items Center
+@media only screen and (max-width: 768px) {
+    .col {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .nav-bar {
+            .nav-item {
+                width: 100%;
+                text-align: center;
+            }
+        }
+}
+
+* {
+
+    // All A Tags
+    a {
+        text-decoration: none;
+        color: @a-tag-color;
+
+        &:hover {
+            color: @a-tag-color;
+        }
+    }
+
+    // Scroll Bar
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+
+        // Scroll Bar Track (scroll harici)
+        &-track {
+            box-shadow: inset 0 0 5px grey;
+        }
+
+        // Scroll Bar Thumb
+        &-thumb {
+            background: @primary-color;
+
+            // Scroll Bar Hover
+            &:hover {
+                background: @secondary-color;
+            }
+        }
+    }
+
+    body {
+        font-family: 'Amiri', serif;
+        font-family: 'Secular One', sans-serif;
+        background-color: @background-color;
+
+        // Outline Button Sytle
+        .outline-button {
+            color: @primary-color;
+            border: 2px solid @secondary-color;
+            transition: background-color .5s ease;
+
+            &.bottom-right {
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            &:hover {
+                background-color: @secondary-color;
+            }
+        }
+
+        // Underline Button Style
+        .underline-button {
+            &:hover {
+                cursor: pointer;
+
+                &::after {
+                    width: 100%;
+                    background: @background-color;
+                }
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                margin: auto;
+                height: 3px;
+                width: 0px;
+                background: transparent;
+                transition: width .5s ease, background-color .5s ease;
+            }
+        }
+
+        // Rating Stars
+        .stars {
+            font-size: 15px;
+
+            .checked {
+                color: orange;
+
+            }
+
+            .rating-count {
+                color: gray;
+            }
+        }
+
+        // Product Tabs
+        .nav-tabs {
+            .nav-link {
+                color: @primary-color;
+
+                &.active {
+                    color: @secondary-color;
+                }
+            }
+        }
+
+        // Pagination Contents
+        .tab-content {
+            .tab-pane {
+                height: 20rem;
+                overflow-y: scroll;
+                overflow-x: hidden;
+            }
+        }
+
+        // Navbar
+        .navigation {
+            background-color: @primary-color;
+            color: @background-color;
+
+            .navbar-toggler {
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+                z-index: 2;
+                width: 2rem;
+                height: 5rem;
+
+                span {
+                    color: @background-color;
+                }
+            }
+
+            .fa-search {
+                position: absolute;
+                margin: 10px;
+                color: @primary-color;
+                align-items: center;
+            }
+
+            .searchInput {
+                background-color: @background-color;
+                text-indent: 10px;
+                padding-left: 20px;
+                border-radius: 10px;
+            }
+
+            .nav-link {
+                color: @background-color;
+            }
+
+            .cart-item-count {
+                font-size: 12px;
+                background: #ff0000;
+                color: #fff;
+                padding: 0 5px;
+                vertical-align: top;
+                border-radius: 50%;
+            }
+
+            .line,
+            .nav-btn-line {
+                background-color: @background-color;
+                width: .5px;
+                height: 20px;
+            }
+        }
+
+        // Slider
+        .slider {
+
+            .owl-carousel {
+
+                // Expand icon
+                .expandable {
+                    span {
+                        position: absolute;
+                        bottom: 1rem;
+                        left: 2rem;
+                        color: @background-color;
+                    }
+                }
+
+                .owl-nav {
+
+                    // Previous button
+                    button.owl-prev {
+                        position: absolute;
+                        top: 40%;
+                        left: 1rem;
+                        color: @background-color;
+
+                        &:hover {
+                            color: @secondary-color;
+                            background-color: transparent;
+                        }
+                    }
+
+                    // Next button
+                    button.owl-next {
+                        position: absolute;
+                        top: 40%;
+                        right: 1rem;
+                        color: @background-color;
+
+                        &:hover {
+                            color: @secondary-color;
+                            background-color: transparent;
+                        }
+                    }
+                }
+            }
+
+            .owl-one,
+            .owl-five {
+                .item {
+                    height: 30rem;
+                }
+            }
+
+            .owl-two,
+            .owl-three,
+            .owl-four {
+                .item {
+                    height: 14rem;
+                }
+            }
+
+            .owl-one,
+            .owl-two,
+            .owl-three,
+            .owl-four,
+            .owl-five {
+                img {
+                    border-radius: 1rem;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                }
+            }
+        }
+
+        // Cards
+        .cards {
+            .card {
+                a {
+                    text-decoration: none;
+                    color: @a-tag-color;
+
+                    &:hover {
+                        color: @a-tag-color;
+                    }
+                }
+
+                border-radius: 4px;
+                background: #fff;
+                box-shadow: 0 6px 10px rgba(0, 0, 0, .08),
+                0 0 6px rgba(0, 0, 0, .05);
+                transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12),
+                .3s box-shadow,
+                .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.02);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+                }
+
+                .card-text {
+                    &:hover {
+                        color: @secondary-color;
+                    }
+                }
+
+                .card-title {
+                    font-size: 1.1rem;
+
+                    .price {
+                        text-decoration: line-through;
+                        color: gray;
+                    }
+                }
+
+                .add-cart {
+                    color: @primary-color;
+                    bottom: 1rem;
+                    right: 1rem;
+                }
+
+                // Ribbon
+                .ribbon-horizontal {
+                    position: absolute;
+                    right: 0;
+                    top: 1rem;
+                    border: 13px solid #e46a76;
+                    border-right: 0;
+                    border-left: 10px solid transparent;
+                    height: 0;
+                    line-height: 0;
+                    width: 100px;
+                    color: white;
+                    z-index: 1;
+                    -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+                    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+                    letter-spacing: 3px;
+
+                    span {
+                        position: relative;
+                        padding: 0 4px 0 10px;
+                        text-align: center;
+                    }
+                }
+
+                // Rating stars
+                .stars {
+                    font-size: 10px;
+
+                    .checked {
+                        color: orange;
+
+                    }
+                }
+            }
+        }
+
+        // Accordion
+        .accordion {
+            .accordion-body {
+                display: block;
+                height: 6rem;
+                overflow-y: scroll;
+            }
+
+            [aria-expanded="true"] {
+                background-color: @secondary-color;
+                color: @primary-color;
+            }
+
+            .filtr-buttons {
+                display: flex;
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        //Footer
+        footer {
+            background-color: @primary-color;
+            color: @background-color;
+
+            a {
+                color: @background-color;
+
+                &:hover {
+                    color: @secondary-color;
+                }
+            }
+        }
+
+        // Whatsapp icon
+        .whatsapp {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+
+            &:hover {
+                color: @background-color;
+
+            }
+
+            .whatsapp-font {
+                margin-top: 15px;
+            }
+        }
+    }
+
+}
